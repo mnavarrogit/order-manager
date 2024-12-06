@@ -18,6 +18,7 @@ entity Orders: cuid, managed {
     criticality: Integer;
     netAmount: Double;
     qtyTotal: Integer;
+    orderSAP: String;
 }
 
 entity Products  {

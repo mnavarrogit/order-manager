@@ -36,6 +36,11 @@ annotate service.Orders with @(
                 Value : qtyTotal,
                 Label : '{i18n>TotalQuantity}',
             },
+            {
+                $Type : 'UI.DataField',
+                Value : orderSAP,
+                Label : 'Order SAP',
+            },
         ],
     },
     UI.Facets : [
@@ -79,6 +84,17 @@ annotate service.Orders with @(
             Value : status_code,
             Criticality : criticality,
             CriticalityRepresentation : #WithIcon,
+            ![@UI.Importance] : #High,
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'OrderService.Create_Order',
+            Label : '{i18n>SyncOrderS4}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : orderSAP,
+            Label : 'Order SAP',
             ![@UI.Importance] : #High,
         },
     ],
